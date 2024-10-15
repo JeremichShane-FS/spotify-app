@@ -1,6 +1,6 @@
 ---
 name: "Feature: {Feature} Deployment"
-about: Focus on Deploying to AWS
+about: Focus on Deploying to [platform]
 title: "Feature: {Feature} Deployment"
 labels: deployment
 ---
