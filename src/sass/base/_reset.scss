@@ -2,6 +2,7 @@
 * {
   margin: 0;
   padding: 0;
+  // border: 1px solid orange;
 }
 
 /* min body height */
@@ -68,4 +69,11 @@ textarea:not([rows]) {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
 }

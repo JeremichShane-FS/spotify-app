@@ -1,0 +1,7 @@
+@use "@/sass/utilities" as *;
+
+.profile-pic {
+  @include profile-pic;
+
+  border: 2px solid var(--white);
+}

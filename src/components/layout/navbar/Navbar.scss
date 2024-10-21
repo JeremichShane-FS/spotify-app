@@ -1,0 +1,13 @@
+.navbar {
+  min-width: 15rem;
+
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__item {
+    margin: 0 0.5em;
+    position: relative;
+  }
+}

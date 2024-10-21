@@ -1,0 +1,9 @@
+@use "@/sass/utilities" as *;
+
+.signup-button {
+  @include auth-button;
+
+  &:hover {
+    color: var(--primary-color);
+  }
+}
