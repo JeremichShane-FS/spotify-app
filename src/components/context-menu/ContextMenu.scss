@@ -1,3 +1,5 @@
+@use "@/sass/base" as *;
+
 .context-menu {
   position: absolute;
   min-width: 12.25rem;
@@ -15,19 +17,28 @@
   }
 
   &__item {
-    padding: 8px 16px;
-
     &:hover {
       background-color: var(--secondary-color);
+      border-radius: 4px;
       cursor: pointer;
     }
   }
 
   &__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     background: none;
     border: none;
     width: 100%;
     text-align: left;
-    font-size: 14px;
+    font-size: $sm-size;
+    padding: 0.5rem 1rem;
+  }
+
+  &__icon {
+    height: 1.5625rem;
+    width: 1.5625rem;
   }
 }

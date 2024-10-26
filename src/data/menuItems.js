@@ -1,8 +1,11 @@
-import { handleSignOut } from "../services/auth";
+import { AccountSVG, LogoutSVG, ProfileSVG, SettingsSVG } from "@/components/icons";
+import { handleSignOut } from "@/services/auth";
+
+const defaultOnClick = () => {};
 
 export const menuItems = [
-  { label: "Account", onClick: () => {} },
-  { label: "Profile", onClick: () => {} },
-  { label: "Settings", onClick: () => {} },
-  { label: "Log out", onClick: handleSignOut },
+  { label: "Account", defaultOnClick, icon: <AccountSVG /> },
+  { label: "Profile", defaultOnClick, icon: <ProfileSVG /> },
+  { label: "Settings", defaultOnClick, icon: <SettingsSVG /> },
+  { label: "Log out", onClick: handleSignOut, icon: <LogoutSVG /> },
 ];

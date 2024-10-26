@@ -1,26 +1,39 @@
 import { useSession } from "next-auth/react";
 import Image from "next/image";
-
 import "./ProfilePic.scss";
+
+const FallbackInitials = ({ name }) => {
+  const initials =
+    name
+      ?.split(" ")
+      .map(word => word[0])
+      .join("")
+      .toUpperCase() || "?";
+
+  return <div className="profile-pic-fallback">{initials}</div>;
+};
 
 export default function ProfilePic() {
   const { data: session, status } = useSession();
-  const defaultImage = "/images/default-profile-pic.jpg";
 
   if (status === "authenticated") {
+    if (!session?.user?.image) {
+      return <FallbackInitials name={session?.user?.name} />;
+    }
+
     return (
-      <Image
-        src={session?.user?.image || defaultImage}
-        alt={session?.user?.name || "User Profile Picture"}
-        title={session?.user?.name || "User Profile Picture"}
-        height={40}
-        width={40}
-        onError={e => {
-          e.target.onerror = null; // Prevents infinite loop if fallback image also fails
-          e.target.src = defaultImage;
-        }}
-        className="profile-pic"
-      />
+      <div className="profile-pic-wrapper">
+        <Image
+          src={session.user.image}
+          alt={session.user.name || "User Profile Picture"}
+          title={session.user.name || "User Profile Picture"}
+          height={40}
+          width={40}
+          className="profile-pic"
+        />
+      </div>
     );
   }
+
+  return null;
 }

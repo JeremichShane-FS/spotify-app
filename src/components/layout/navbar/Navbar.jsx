@@ -4,7 +4,7 @@ import { ContextMenu } from "@/components";
 import { SignIn, SignUp } from "@/components/buttons";
 import { ProfilePic } from "@/components/user";
 import { useClickOutside } from "@/hooks";
-import { signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { useRef, useState } from "react";
 
 import { menuItems } from "@/data/menuItems";

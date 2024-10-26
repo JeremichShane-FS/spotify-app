@@ -8,6 +8,7 @@ const ContextMenu = ({ items }) => {
           <li key={index} className="context-menu__item">
             <button onClick={item.onClick} className="context-menu__button">
               {item.label}
+              {item.icon}
             </button>
           </li>
         ))}
