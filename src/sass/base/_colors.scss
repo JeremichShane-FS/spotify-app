@@ -1,6 +1,8 @@
 $primary-color: #1ed760;
 $secondary-color: #ffffff1a;
 
+$btn-hover-color: #1aa34a;
+
 // Black and White
 $black: #000;
 $light-black: #121212;
@@ -21,6 +23,8 @@ $gray-900: #1f1f1f;
 :root {
   --primary-color: #{$primary-color};
   --secondary-color: #{$secondary-color};
+
+  --btn-hover-color: #{$btn-hover-color};
 
   --black: #{$black};
   --light-black: #{$light-black};

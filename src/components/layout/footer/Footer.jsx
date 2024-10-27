@@ -1,5 +1,6 @@
 import { setCopyright } from "@/utilities/setCopyright";
-import Image from "next/image";
+
+import "./Footer.scss";
 
 export default function Footer() {
   return (

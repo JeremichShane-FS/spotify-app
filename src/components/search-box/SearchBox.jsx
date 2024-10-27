@@ -1,36 +1,25 @@
 "use client";
 
-import { useState } from "react";
-import "./SearchBox.scss";
+import { useSpotifySearch } from "@/hooks";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import { useDebounce } from "use-debounce";
+import { SearchInput } from "..";
 
 export default function SearchBox() {
-  const [query, setQuery] = useState("");
+  const router = useRouter();
+  const { query, setQuery } = useSpotifySearch();
+  const [debouncedQuery] = useDebounce(query, 500);
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    console.log(query);
-  };
-
-  const handleChange = e => {
-    setQuery(e.target.value);
-  };
+  useEffect(() => {
+    router.push(debouncedQuery ? `/?q=${encodeURIComponent(debouncedQuery)}` : "/");
+  }, [debouncedQuery, router]);
 
   return (
-    <div className="search-box">
-      <div className="no-focus-outline">
-        <form className="search-box__form" onSubmit={handleSubmit}>
-          <input
-            className="search-box__input"
-            onChange={handleChange}
-            placeholder="Search"
-            type="search"
-            value={query}
-            id="search-input"
-            tabIndex={0}
-            spellCheck="false"
-          />
-        </form>
-      </div>
-    </div>
+    <SearchInput
+      value={query}
+      onChange={setQuery}
+      placeholder="Search for songs, artists, or albums..."
+    />
   );
 }

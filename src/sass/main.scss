@@ -5,7 +5,6 @@
   display: grid;
   grid-template-rows: 1.25rem 1fr 1.25rem;
   align-items: center;
-  justify-items: center;
   min-height: 100svh;
   padding: 5rem;
   gap: 4rem;
@@ -17,17 +16,85 @@
   flex-direction: column;
   gap: 2rem;
   grid-row-start: 2;
+
+  @media (min-width: 56.25em) {
+    min-width: 30rem;
+  }
 }
 
 .default-image {
-  width: 96px;
-  height: 96px;
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
-  background-color: #1db954;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
+}
+
+.home {
+  // min-width: 43.75em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+
+  &__login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem;
+
+    &-text {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: #666;
+    }
+
+    &-button {
+      padding: 0.75rem 1.5rem;
+      margin-top: 1.5rem;
+      background: var(--primary-color);
+      border: none;
+      border-radius: 1.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+
+      &:hover {
+        background: var(--btn-hover-color);
+      }
+    }
+  }
+
+  &__title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  &__error {
+    color: #f44336;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    margin-bottom: 2rem;
+  }
+
+  &__results {
+    width: 100%;
+    max-width: 48em;
+    margin: 0 auto;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+    border-radius: 0.5rem;
+  }
+
+  &__message {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+  }
 }

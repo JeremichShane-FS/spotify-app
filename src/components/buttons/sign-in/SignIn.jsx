@@ -13,7 +13,7 @@ export default function SignIn() {
   }
 
   return (
-    <button href={`/dashboard`} className="login-button" onClick={() => signIn()}>
+    <button className="login-button" onClick={() => signIn()}>
       Log In
     </button>
   );

@@ -27,3 +27,9 @@ export const LogoutSVG = () => (
     <use href="/images/svg/sprite.svg#logout" />
   </svg>
 );
+
+export const PlaySVG = () => (
+  <svg className="context-menu__icon">
+    <use href="/images/svg/sprite.svg#play" />
+  </svg>
+);

@@ -1,5 +1,3 @@
-@use "@/sass/base" as *;
-
 .context-menu {
   position: absolute;
   min-width: 12.25rem;
@@ -33,7 +31,7 @@
     border: none;
     width: 100%;
     text-align: left;
-    font-size: $sm-size;
+    font-size: var(--small-size);
     padding: 0.5rem 1rem;
   }
 

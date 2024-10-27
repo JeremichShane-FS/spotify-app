@@ -1,6 +1,4 @@
 .navbar {
-  min-width: 15rem;
-
   &__list {
     display: flex;
     justify-content: flex-end;
@@ -13,8 +11,8 @@
 }
 
 .profile-pic-wrapper {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -26,14 +24,13 @@
 }
 
 .profile-pic-fallback {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
-  background-color: #1db954; // Spotify green
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 16px;
 }

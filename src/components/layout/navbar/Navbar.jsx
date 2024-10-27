@@ -7,7 +7,7 @@ import { useClickOutside } from "@/hooks";
 import { useSession } from "next-auth/react";
 import { useRef, useState } from "react";
 
-import { menuItems } from "@/data/menuItems";
+import { menuItems } from "@/constants/menuItems";
 import "./Navbar.scss";
 
 export default function Navbar() {
