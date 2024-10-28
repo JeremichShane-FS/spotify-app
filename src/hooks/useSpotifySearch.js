@@ -12,12 +12,17 @@ export function useSpotifySearch() {
   const { data: session } = useSession();
   const [query, setQueryState] = useState(searchParams.get("q") || "");
 
+  // Update query when searchParams changes
+  useEffect(() => {
+    const currentQuery = searchParams.get("q") || "";
+    setQueryState(currentQuery);
+  }, [searchParams]);
+
   const setQuery = useCallback(
     newQuery => {
       if (!session) {
         newQuery = "";
       }
-      console.log("Setting query to:", newQuery);
       setQueryState(newQuery);
       queryClient.setQueryData([QUERY_KEY, "query"], newQuery);
     },
@@ -27,6 +32,7 @@ export function useSpotifySearch() {
   // Clear query cache when logging out
   useEffect(() => {
     if (!session) {
+      setQueryState("");
       queryClient.removeQueries([QUERY_KEY]);
     }
   }, [session, queryClient]);

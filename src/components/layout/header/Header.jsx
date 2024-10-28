@@ -12,11 +12,11 @@ export default function Header() {
   const { query, setQuery } = useSpotifySearch();
   const router = useRouter();
 
-  const handleClick = e => {
+  const handleClick = async e => {
     e.preventDefault();
-    setQuery("d");
+    setQuery("");
     console.log("Logo clicked", query);
-    router.push(ROOT);
+    await router.push(ROOT);
   };
 
   return (
