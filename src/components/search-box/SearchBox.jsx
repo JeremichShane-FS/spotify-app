@@ -28,7 +28,7 @@ export default function SearchBox() {
 
   return (
     <SearchInput
-      value={localQuery} // Use localQuery instead of query
+      value={localQuery}
       onChange={handleChange}
       placeholder="Search for songs, artists, or albums..."
     />

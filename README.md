@@ -2,6 +2,8 @@
 
 A modern web application built with Next.js 15 that integrates with Spotify's API to provide a seamless music search and playback experience.
 
+![Spotify-App](/public/images/screenshot.png)
+
 ## 📑 Table of Contents
 
 - [🎵 Spotify Web Application](#-spotify-web-application)
